@@ -7,9 +7,10 @@ public class WindowController : MonoBehaviour {
     public static OnPronounLeave onPronounLeave;
 
     void OnTriggerExit2D (Collider2D other) {
-        Destroy (other.gameObject);
-        if (onPronounLeave != null) {
+        if (other.gameObject.tag == "Pronoun" && onPronounLeave != null) {
+            Destroy (other.gameObject);
             onPronounLeave ();
         }
+
     }
 }
