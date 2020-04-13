@@ -13,8 +13,8 @@ public class ScoreController : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start () {
-        WindowController.onPronounLeave += UpdateLeaveCount;
-        PronounController.onPronounCaught += UpdateScoreCount;
+        WindowController.onPronounLeave += this.UpdateLeaveCount;
+        PronounController.onPronounCaught += this.UpdateScoreCount;
     }
 
     // Update is called once per frame
@@ -30,6 +30,5 @@ public class ScoreController : MonoBehaviour {
     private void UpdateScoreCount () {
         scoreCount += 1;
         scoreCountText.text = scoreCount.ToString ();
-
     }
 }
