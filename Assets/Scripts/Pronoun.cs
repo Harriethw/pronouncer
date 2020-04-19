@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Pronoun : MonoBehaviour {
 
     public delegate void OnPronounCaught ();
     public static OnPronounCaught onPronounCaught;
+
+    private string correctPronoun = "they";
 
     // Start is called before the first frame update
     void Start () {
@@ -18,6 +21,7 @@ public class Pronoun : MonoBehaviour {
 
     private void PronounCaught () {
         onPronounCaught ();
-        Destroy (gameObject);
+        gameObject.GetComponent<TMPro.TextMeshProUGUI> ().text = correctPronoun;
+        gameObject.GetComponent<ParticleSystem> ().Play ();
     }
 }
