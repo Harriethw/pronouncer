@@ -77,8 +77,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4279111182
-  m_fontColor: {r: 0.05660379, g: 0.054734796, b: 0.054734796, a: 1}
+    rgba: 4294928692
+  m_fontColor: {r: 0.2028302, g: 0.41019222, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -102,7 +102,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_textAlignment: 257
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -173,7 +173,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -14.365131, y: -1.925395}
+  m_Offset: {x: -14.007109, y: 27.07474}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -184,7 +184,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 101.83485, y: 59.41085}
+  m_Size: {x: 71.044586, y: 42.941647}
   m_EdgeRadius: 0
 --- !u!50 &9161857138765384549
 Rigidbody2D:
