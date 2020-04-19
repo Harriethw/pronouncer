@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PronounController : MonoBehaviour {
+public class Pronoun : MonoBehaviour {
 
     public delegate void OnPronounCaught ();
     public static OnPronounCaught onPronounCaught;
