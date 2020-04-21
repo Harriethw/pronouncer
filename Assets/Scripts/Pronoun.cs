@@ -11,15 +11,15 @@ public class Pronoun : MonoBehaviour
 
     private string correctPronoun = "they";
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
+    private bool clicked = false;
 
     public void OnMouseDown()
     {
-        PronounCaught();
+        if (!clicked)
+        {
+            PronounCaught();
+            clicked = true;
+        }
     }
 
     private void PronounCaught()
