@@ -6,6 +6,9 @@ public static class PronounValues {
     private static string chosenPronoun1;
     private static string chosenPronoun2;
 
+    private static List<string> possiblePronouns1 = new List<string> { "they", "she", "he" };
+    private static List<string> possiblePronouns2 = new List<string> { "them", "her", "him" };
+
     public static void SetPronouns (string pronoun1, string pronoun2) {
         chosenPronoun1 = pronoun1;
         chosenPronoun2 = pronoun2;
@@ -30,5 +33,29 @@ public static class PronounValues {
     public static string GetPronoun2 () {
         Debug.Log ("returning " + chosenPronoun2);
         return chosenPronoun2;
+    }
+
+    public static List<string> GetWrongPronouns1 () {
+        List<string> wrongPronouns = new List<string> ();
+
+        foreach (string pronoun in possiblePronouns1) {
+            if (pronoun.ToLower () != chosenPronoun1) {
+                wrongPronouns.Add (pronoun);
+            }
+        }
+        Debug.Log (wrongPronouns);
+        return wrongPronouns;
+    }
+
+    public static List<string> GetWrongPronouns2 () {
+        List<string> wrongPronouns = new List<string> ();
+
+        foreach (string pronoun in possiblePronouns2) {
+            if (pronoun.ToLower () != chosenPronoun2) {
+                wrongPronouns.Add (pronoun);
+            }
+        }
+        Debug.Log (wrongPronouns);
+        return wrongPronouns;
     }
 }

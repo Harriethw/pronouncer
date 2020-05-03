@@ -8,9 +8,13 @@ public class Pronoun : MonoBehaviour {
     public delegate void OnPronounCaught ();
     public static OnPronounCaught onPronounCaught;
 
-    private string correctPronoun = "they";
+    private string correctPronoun;
 
     private bool clicked = false;
+
+    void Start () {
+        correctPronoun = PronounValues.GetPronoun1 () != null ? PronounValues.GetPronoun1 () : "they";
+    }
 
     public void OnMouseDown () {
         if (!clicked) {
