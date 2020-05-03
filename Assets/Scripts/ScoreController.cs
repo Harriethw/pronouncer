@@ -20,11 +20,6 @@ public class ScoreController : MonoBehaviour {
         scoreBar.fillAmount = 0f;
     }
 
-    // Update is called once per frame
-    void Update () {
-
-    }
-
     private void UpdateLeaveCount () {
         leaveCount += 1;
         leaveCountText.text = leaveCount.ToString ();
@@ -34,5 +29,10 @@ public class ScoreController : MonoBehaviour {
         scoreCount += 1;
         scoreCountText.text = scoreCount.ToString ();
         scoreBar.fillAmount += 0.2f;
+    }
+
+    void OnDestroy () {
+        WindowController.onPronounLeave -= this.UpdateLeaveCount;
+        Pronoun.onPronounCaught -= this.UpdateScoreCount;
     }
 }
