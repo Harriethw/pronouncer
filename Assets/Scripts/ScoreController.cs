@@ -12,6 +12,7 @@ public class ScoreController : MonoBehaviour {
     private int scoreCount = 0;
 
     public Image scoreBar;
+    public GameObject encouragement;
 
     // Start is called before the first frame update
     void Start () {
@@ -29,6 +30,11 @@ public class ScoreController : MonoBehaviour {
         scoreCount += 1;
         scoreCountText.text = scoreCount.ToString ();
         scoreBar.fillAmount += 0.2f;
+        showEncouragement ();
+    }
+
+    private void showEncouragement () {
+        encouragement.GetComponent<Animator> ().Play ("fade");
     }
 
     void OnDestroy () {
