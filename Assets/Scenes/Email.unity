@@ -215,11 +215,8 @@ RectTransform:
   - {fileID: 1362098782}
   - {fileID: 606805217}
   - {fileID: 630236882}
-  - {fileID: 921332352}
-  - {fileID: 1171352188}
-  - {fileID: 749251140}
-  - {fileID: 116327552}
   - {fileID: 886747734}
+  - {fileID: 903277066}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -255,10 +252,10 @@ RectTransform:
   m_GameObject: {fileID: 116327551}
   m_LocalRotation: {x: -0, y: -0, z: -0.24566907, w: 0.9693538}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.74757, y: 0.74757, z: 0.74757}
+  m_LocalScale: {x: 0.7475699, y: 0.7475699, z: 0.74757}
   m_Children: []
-  m_Father: {fileID: 15858678}
-  m_RootOrder: 7
+  m_Father: {fileID: 903277066}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -28.443}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -816,8 +813,8 @@ Transform:
   m_LocalPosition: {x: 6, y: -173, z: 0}
   m_LocalScale: {x: 35.005043, y: 35.005043, z: 35.005043}
   m_Children: []
-  m_Father: {fileID: 15858678}
-  m_RootOrder: 6
+  m_Father: {fileID: 903277066}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &749251141
 SpriteRenderer:
@@ -945,7 +942,7 @@ RectTransform:
   m_Children:
   - {fileID: 1048767434}
   m_Father: {fileID: 15858678}
-  m_RootOrder: 8
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1054,6 +1051,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 886747733}
   m_CullTransparentMesh: 0
+--- !u!1 &903277065
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 903277066}
+  m_Layer: 5
+  m_Name: Scribbles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &903277066
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903277065}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 921332352}
+  - {fileID: 1171352188}
+  - {fileID: 749251140}
+  - {fileID: 116327552}
+  m_Father: {fileID: 15858678}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &918810623
 GameObject:
   m_ObjectHideFlags: 0
@@ -1153,10 +1189,10 @@ Transform:
   m_GameObject: {fileID: 921332351}
   m_LocalRotation: {x: -0, y: -0, z: -0.29571906, w: 0.95527494}
   m_LocalPosition: {x: -338, y: 237, z: 0}
-  m_LocalScale: {x: 66.04726, y: 66.04726, z: 66.04726}
+  m_LocalScale: {x: 66.04727, y: 66.04727, z: 66.04726}
   m_Children: []
-  m_Father: {fileID: 15858678}
-  m_RootOrder: 4
+  m_Father: {fileID: 903277066}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -34.401}
 --- !u!212 &921332353
 SpriteRenderer:
@@ -1388,11 +1424,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1171352187}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -158, y: 264, z: 0}
+  m_LocalPosition: {x: -157.99998, y: 264, z: 0}
   m_LocalScale: {x: 66.04726, y: 66.04726, z: 66.04726}
   m_Children: []
-  m_Father: {fileID: 15858678}
-  m_RootOrder: 5
+  m_Father: {fileID: 903277066}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1171352189
 SpriteRenderer:
@@ -1866,7 +1902,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1876582655
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2033,7 +2069,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wordPrefab: {fileID: 5679170201230975742, guid: e178a3b3b8ae44f979184db9c3f5f445,
     type: 3}
-  pronounPrefab: {fileID: 5087715846240006907, guid: bcde9be25bbfc415c9dd2de253b7d663,
+  pronounPrefab1: {fileID: 5087715846240006907, guid: bcde9be25bbfc415c9dd2de253b7d663,
+    type: 3}
+  pronounPrefab2: {fileID: 5087715846240006907, guid: 58d2a3aa9c3604cd7a00bbec015d73d4,
     type: 3}
   maxY: 570
   changeY: 50

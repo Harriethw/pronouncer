@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public static class PronounValues {
-    private static string chosenPronoun1;
-    private static string chosenPronoun2;
+    private static string chosenPronoun1 = "they";
+    private static string chosenPronoun2 = "them";
+
+    private static List<string> wrongPronouns1 = new List<string> { "she", "he" };
+    private static List<string> wrongPronouns2 = new List<string> { "her", "him" };
 
     private static List<string> possiblePronouns1 = new List<string> { "they", "she", "he" };
     private static List<string> possiblePronouns2 = new List<string> { "them", "her", "him" };
@@ -16,46 +19,45 @@ public static class PronounValues {
     }
 
     public static void SetPronoun1 (string pronoun1) {
-        chosenPronoun1 = pronoun1;
+        chosenPronoun1 = pronoun1.ToLower ();
+        SetWrongPronouns ();
         Debug.Log ("chosen pronoun1 is " + chosenPronoun1);
     }
 
     public static void SetPronoun2 (string pronoun2) {
-        chosenPronoun2 = pronoun2;
+        chosenPronoun2 = pronoun2.ToLower ();
+        SetWrongPronouns ();
         Debug.Log ("chosen pronoun2 is " + chosenPronoun2);
     }
 
     public static string GetPronoun1 () {
-        Debug.Log ("returning " + chosenPronoun1);
         return chosenPronoun1;
     }
 
     public static string GetPronoun2 () {
-        Debug.Log ("returning " + chosenPronoun2);
         return chosenPronoun2;
     }
 
-    public static List<string> GetWrongPronouns1 () {
-        List<string> wrongPronouns = new List<string> ();
-
+    private static void SetWrongPronouns () {
         foreach (string pronoun in possiblePronouns1) {
             if (pronoun.ToLower () != chosenPronoun1) {
-                wrongPronouns.Add (pronoun);
+                wrongPronouns1.Add (pronoun);
             }
         }
-        Debug.Log (wrongPronouns);
-        return wrongPronouns;
+        Debug.Log (wrongPronouns1);
+        foreach (string pronoun in possiblePronouns2) {
+            if (pronoun.ToLower () != chosenPronoun2) {
+                wrongPronouns2.Add (pronoun);
+            }
+        }
+        Debug.Log (wrongPronouns2);
+    }
+
+    public static List<string> GetWrongPronouns1 () {
+        return wrongPronouns1;
     }
 
     public static List<string> GetWrongPronouns2 () {
-        List<string> wrongPronouns = new List<string> ();
-
-        foreach (string pronoun in possiblePronouns2) {
-            if (pronoun.ToLower () != chosenPronoun2) {
-                wrongPronouns.Add (pronoun);
-            }
-        }
-        Debug.Log (wrongPronouns);
-        return wrongPronouns;
+        return wrongPronouns2;
     }
 }
