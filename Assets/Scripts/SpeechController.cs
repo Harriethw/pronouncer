@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpeechController : MonoBehaviour {
 
-    public int interruptIndex = 2;
+    public static int interruptIndex = 2;
     public GameObject interruption;
     public GameObject speechBubble;
 
