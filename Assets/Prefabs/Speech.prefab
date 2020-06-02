@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4618107053652416420}
   m_Layer: 5
   m_Name: Speech
-  m_TagString: Untagged
+  m_TagString: Speech
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

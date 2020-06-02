@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Pronoun
+  - Speech
   layers:
   - Default
   - TransparentFX

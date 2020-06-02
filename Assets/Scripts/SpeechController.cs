@@ -11,6 +11,8 @@ public class SpeechController : MonoBehaviour
     public GameObject speechBubble;
     public GameObject interruptButton;
 
+    private int interruptCount = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +31,7 @@ public class SpeechController : MonoBehaviour
         }
     }
 
+    //TODO choose a random set of wrong pronouns?s
     private List<string> GetChatter()
     {
         List<string> formattedChatter = new List<string>();
@@ -57,7 +60,32 @@ public class SpeechController : MonoBehaviour
         interrupt.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = formattedInterruption;
         interrupt.transform.SetParent(gameObject.transform, false);
         interrupt.transform.SetSiblingIndex(interruptIndex);
+
+        GameObject apology = Instantiate(speechBubble);
+        apology.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = SpeechCopy.apologies[0];
+        apology.transform.SetParent(gameObject.transform, false);
+        apology.transform.SetSiblingIndex(interruptIndex + 1);
+
+        interruptCount += 1;
+
+        if (interruptCount >= 3)
+        {
+            CorrectAllPronouns();
+        }
+
         StartCoroutine(StopScroll());
+    }
+
+    private void CorrectAllPronouns()
+    {
+        GameObject[] speechBubbles = GameObject.FindGameObjectsWithTag("Speech");
+        foreach (var speech in speechBubbles)
+        {
+            string speechText = speech.GetComponentInChildren<TMPro.TextMeshProUGUI>().text;
+            speechText = speechText.Replace(PronounValues.GetWrongPronouns1()[0], PronounValues.GetRightPronoun1());
+            speechText = speechText.Replace(PronounValues.GetWrongPronouns2()[0], PronounValues.GetRightPronoun2());
+            speech.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = speechText;
+        }
     }
 
     private IEnumerator StopScroll()
@@ -69,7 +97,7 @@ public class SpeechController : MonoBehaviour
 
         gameObject.GetComponent<Scroll>().speed = 1;
 
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(5);
 
         interruptButton.GetComponent<Button>().interactable = true;
     }
