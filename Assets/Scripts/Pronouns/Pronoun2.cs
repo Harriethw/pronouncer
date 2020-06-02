@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Pronoun2 : Pronoun {
+public class Pronoun2 : Pronoun
+{
     //e.g. her, him, them
-    void Start () {
-        SetCorrectPronoun ();
+    void Start()
+    {
+        SetCorrectPronoun();
     }
 
-    private void SetCorrectPronoun () {
-        correctPronoun = PronounValues.GetPronoun2 ();
+    private void SetCorrectPronoun()
+    {
+        correctPronoun = PronounValues.GetRightPronoun2();
     }
 }

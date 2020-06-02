@@ -52,7 +52,9 @@ public class SpeechController : MonoBehaviour
 
     public void Interrupt()
     {
+        string formattedInterruption = SpeechCopy.interruption.Replace("(rightPronoun1)", PronounValues.GetRightPronoun1()).Replace("(rightPronoun2)", PronounValues.GetRightPronoun2());
         GameObject interrupt = Instantiate(interruption);
+        interrupt.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = formattedInterruption;
         interrupt.transform.SetParent(gameObject.transform, false);
         interrupt.transform.SetSiblingIndex(interruptIndex);
         StartCoroutine(StopScroll());
