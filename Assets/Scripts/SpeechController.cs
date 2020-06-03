@@ -10,6 +10,7 @@ public class SpeechController : MonoBehaviour
     public GameObject interruption;
     public GameObject speechBubble;
     public GameObject interruptButton;
+    public Sprite leftSpeechBubble;
 
     private int interruptCount = 0;
 
@@ -21,28 +22,18 @@ public class SpeechController : MonoBehaviour
 
     private void GenerateSpeech()
     {
-        List<string> formattedChatter = GetChatter();
+        List<string> formattedChatter = CopyFormatter.AddWrongPronounsToArray(SpeechCopy.chatter);
         for (int i = 0; i < formattedChatter.Count; i++)
         {
             GameObject speech = Instantiate(speechBubble);
             speech.transform.SetParent(gameObject.transform, false);
             speech.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = formattedChatter[i];
             SetHeight(speech.transform);
+            if (i % 2 == 0)
+            {
+                LeftAlignSpeechBubble(speech);
+            }
         }
-    }
-
-    //TODO choose a random set of wrong pronouns?s
-    private List<string> GetChatter()
-    {
-        List<string> formattedChatter = new List<string>();
-        foreach (var text in SpeechCopy.chatter)
-        {
-            string newText = "";
-            newText = text.Replace("(wrongPronoun1)", PronounValues.GetWrongPronouns1()[0]);
-            newText = newText.Replace("(wrongPronoun2)", PronounValues.GetWrongPronouns2()[0]);
-            formattedChatter.Add(newText);
-        }
-        return formattedChatter;
     }
 
     private void SetHeight(Transform speechTransform)
@@ -53,8 +44,17 @@ public class SpeechController : MonoBehaviour
         speechTransform.GetComponent<RectTransform>().sizeDelta = new Vector2(currentWidth, textHeight);
     }
 
+    private void LeftAlignSpeechBubble(GameObject speech)
+    {
+        speech.GetComponent<Image>().sprite = leftSpeechBubble;
+        Vector3 childPos = speech.transform.GetChild(0).transform.localPosition;
+        childPos = new Vector3((childPos.x + 50), childPos.y, 0);
+        speech.transform.GetChild(0).transform.localPosition = childPos;
+    }
+
     public void Interrupt()
     {
+        //TODO put this in CopyFormatter
         string formattedInterruption = SpeechCopy.interruption.Replace("(rightPronoun1)", PronounValues.GetRightPronoun1()).Replace("(rightPronoun2)", PronounValues.GetRightPronoun2());
         GameObject interrupt = Instantiate(interruption);
         interrupt.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = formattedInterruption;
