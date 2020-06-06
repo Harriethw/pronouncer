@@ -7,20 +7,13 @@ using UnityEngine.SceneManagement;
 public class PronounSubmit : MonoBehaviour
 {
 
-    public TMP_InputField tmpInputField;
-
-    public void SetPronoun1()
-    {
-        PronounValues.SetPronoun1(tmpInputField.text);
-    }
-
-    public void SetPronoun2()
-    {
-        PronounValues.SetPronoun2(tmpInputField.text);
-    }
+    public TMP_InputField pronoun1;
+    public TMP_InputField pronoun2;
 
     public void OnSubmit()
     {
+        PronounValues.SetPronoun1(pronoun1.text);
+        PronounValues.SetPronoun2(pronoun2.text);
         Debug.Log("submitting " + PronounValues.GetRightPronoun1() + PronounValues.GetRightPronoun2());
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
