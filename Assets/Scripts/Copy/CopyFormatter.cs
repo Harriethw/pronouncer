@@ -21,8 +21,8 @@ public static class CopyFormatter
 
     public static string AddWrongPronounsToString(string copy)
     {
-        return copy.Replace("(wrongPronoun1)", PronounValues.GetWrongPronouns1()[0])
-                .Replace("(wrongPronoun2)", PronounValues.GetWrongPronouns2()[0]);
+        return copy.Replace("(wrongPronoun1)", PronounValues.GetWrongPronouns1()[1])
+                .Replace("(wrongPronoun2)", PronounValues.GetWrongPronouns2()[1]);
     }
 
 }

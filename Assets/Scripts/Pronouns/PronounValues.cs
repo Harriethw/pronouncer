@@ -7,8 +7,8 @@ public static class PronounValues
     private static string rightPronoun1 = "they";
     private static string rightPronoun2 = "them";
 
-    private static List<string> wrongPronouns1 = new List<string>();
-    private static List<string> wrongPronouns2 = new List<string>();
+    private static List<string> wrongPronouns1 = new List<string> { "they", "she", "he" };
+    private static List<string> wrongPronouns2 = new List<string> { "them", "her", "him" };
 
     private static List<string> possiblePronouns1 = new List<string> { "they", "she", "he" };
     private static List<string> possiblePronouns2 = new List<string> { "them", "her", "him" };
@@ -46,9 +46,9 @@ public static class PronounValues
     {
         foreach (string pronoun in possiblePronouns1)
         {
-            if (pronoun != rightPronoun1)
+            if (pronoun == rightPronoun1)
             {
-                wrongPronouns1.Add(pronoun);
+                wrongPronouns1.Remove(pronoun);
             }
         }
     }
@@ -56,9 +56,9 @@ public static class PronounValues
     {
         foreach (string pronoun in possiblePronouns2)
         {
-            if (pronoun != rightPronoun2)
+            if (pronoun == rightPronoun2)
             {
-                wrongPronouns2.Add(pronoun);
+                wrongPronouns2.Remove(pronoun);
             }
         }
     }

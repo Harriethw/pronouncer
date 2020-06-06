@@ -28,6 +28,7 @@ public class TextGenerator : MonoBehaviour
         GetWidthMeasurements();
         GetWords();
         GenerateWords();
+        Pronoun.onPronounCaught += this.GenerateGrid;
     }
 
     private void GetWidthMeasurements()
@@ -63,11 +64,9 @@ public class TextGenerator : MonoBehaviour
                 wordObject = Instantiate(wordPrefab);
             }
             wordObject.GetComponent<TMPro.TextMeshProUGUI>().text = word;
-            Canvas.ForceUpdateCanvases();
             wordGrid.Add(wordObject);
-            GenerateGrid();
         }
-
+        GenerateGrid();
     }
 
     private string FormatWord(string word)
@@ -80,6 +79,7 @@ public class TextGenerator : MonoBehaviour
 
     private void GenerateGrid()
     {
+        Canvas.ForceUpdateCanvases();
         float x = minX;
         float y = maxY;
         for (int i = 0; i < wordGrid.Count; i++)
@@ -98,7 +98,6 @@ public class TextGenerator : MonoBehaviour
                 }
             }
             wordGrid[i].transform.localPosition = new Vector3(x, y, 0);
-
         }
     }
 
