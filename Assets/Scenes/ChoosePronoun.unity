@@ -786,7 +786,6 @@ GameObject:
   - component: {fileID: 644482447}
   - component: {fileID: 644482446}
   - component: {fileID: 644482445}
-  - component: {fileID: 644482448}
   m_Layer: 5
   m_Name: Pronoun1
   m_TagString: Untagged
@@ -891,18 +890,7 @@ MonoBehaviour:
       m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 644482448}
-        m_MethodName: SetPronoun1
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_OnTouchScreenKeyboardStatusChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -957,19 +945,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 644482443}
   m_CullTransparentMesh: 0
---- !u!114 &644482448
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 644482443}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a959b7d4f4f614e5384029fa2d73487b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tmpInputField: {fileID: 644482445}
 --- !u!1 &915113461
 GameObject:
   m_ObjectHideFlags: 0
@@ -1344,7 +1319,6 @@ GameObject:
   - component: {fileID: 1935656857}
   - component: {fileID: 1935656856}
   - component: {fileID: 1935656855}
-  - component: {fileID: 1935656858}
   m_Layer: 5
   m_Name: Pronoun2
   m_TagString: Untagged
@@ -1449,18 +1423,7 @@ MonoBehaviour:
       m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1935656858}
-        m_MethodName: SetPronoun2
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_OnTouchScreenKeyboardStatusChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1515,19 +1478,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1935656853}
   m_CullTransparentMesh: 0
---- !u!114 &1935656858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1935656853}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a959b7d4f4f614e5384029fa2d73487b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tmpInputField: {fileID: 1935656855}
 --- !u!1 &1974665972
 GameObject:
   m_ObjectHideFlags: 0
@@ -1736,7 +1686,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a959b7d4f4f614e5384029fa2d73487b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tmpInputField: {fileID: 0}
+  pronoun1: {fileID: 644482445}
+  pronoun2: {fileID: 1935656855}
 --- !u!114 &2118576911
 MonoBehaviour:
   m_ObjectHideFlags: 0

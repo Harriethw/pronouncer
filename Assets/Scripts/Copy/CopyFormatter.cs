@@ -19,4 +19,10 @@ public static class CopyFormatter
         return newCopyList;
     }
 
+    public static string AddWrongPronounsToString(string copy)
+    {
+        return copy.Replace("(wrongPronoun1)", PronounValues.GetWrongPronouns1()[0])
+                .Replace("(wrongPronoun2)", PronounValues.GetWrongPronouns2()[0]);
+    }
+
 }
