@@ -10,7 +10,7 @@ public class TextGenerator : MonoBehaviour
     public GameObject wordPrefab;
     public GameObject pronounPrefab1;
     public GameObject pronounPrefab2;
-    private string paragraph = "Lorem ipsum (wrongPronoun2) sit (wrongPronoun1), (wrongPronoun2) adipiscing sed do eiusmod tempor (wrongPronoun2) ut labore et (wrongPronoun1) magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation (wrongPronoun1) laboris nisi ut aliquip (wrongPronoun1) ea commodo consequat. (wrongPronoun1), aute irure dolor in reprehenderit (wrongPronoun1) voluptate (wrongPronoun2) esse cillum dolore (wrongPronoun1) fugiat nulla pariatur. Excepteur sint (wrongPronoun2) cupidatat (wrongPronoun1) proident, sunt in culpa qui officia (wrongPronoun2), mollit anim id est laborum. ";
+    private string copy;
     private List<string> words = new List<string>();
     private List<GameObject> wordGrid = new List<GameObject>();
 
@@ -24,7 +24,7 @@ public class TextGenerator : MonoBehaviour
 
     void Start()
     {
-        paragraph = CopyFormatter.AddWrongPronounsToString(paragraph);
+        copy = CopyFormatter.AddWrongPronounsToString(EmailCopy.emailCopy);
         GetWidthMeasurements();
         GetWords();
         GenerateWords();
@@ -40,7 +40,7 @@ public class TextGenerator : MonoBehaviour
 
     private void GetWords()
     {
-        string[] wordArray = paragraph.Split(char.Parse(" "));
+        string[] wordArray = copy.Split(char.Parse(" "));
         var wordList = new List<string>(wordArray);
         words = wordList;
     }
