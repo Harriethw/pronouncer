@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SpeechController : MonoBehaviour
-{
+public class SpeechController : MonoBehaviour {
 
     public static int interruptIndex = 2;
     public GameObject interruption;
@@ -15,90 +14,79 @@ public class SpeechController : MonoBehaviour
     private int interruptCount = 0;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        GenerateSpeech();
+    void Start () {
+        GenerateSpeech ();
     }
 
-    private void GenerateSpeech()
-    {
-        List<string> formattedChatter = CopyFormatter.AddWrongPronounsToArray(SpeechCopy.chatter);
-        for (int i = 0; i < formattedChatter.Count; i++)
-        {
-            GameObject speech = Instantiate(speechBubble);
-            speech.transform.SetParent(gameObject.transform, false);
-            speech.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = formattedChatter[i];
-            SetHeight(speech.transform);
-            if (i % 2 == 0)
-            {
-                LeftAlignSpeechBubble(speech);
+    private void GenerateSpeech () {
+        List<string> formattedChatter = CopyFormatter.AddWrongPronounsToArray (SpeechCopy.chatter);
+        for (int i = 0; i < formattedChatter.Count; i++) {
+            GameObject speech = Instantiate (speechBubble);
+            speech.transform.SetParent (gameObject.transform, false);
+            speech.GetComponentInChildren<TMPro.TextMeshProUGUI> ().text = formattedChatter[i];
+            SetHeight (speech.transform);
+            if (i % 2 == 0) {
+                LeftAlignSpeechBubble (speech);
             }
         }
     }
 
-    private void SetHeight(Transform speechTransform)
-    {
-        Canvas.ForceUpdateCanvases();
-        float textHeight = speechTransform.GetChild(0).GetComponent<RectTransform>().rect.height;
-        float currentWidth = speechTransform.GetComponent<RectTransform>().rect.width;
-        speechTransform.GetComponent<RectTransform>().sizeDelta = new Vector2(currentWidth, textHeight);
+    private void SetHeight (Transform speechTransform) {
+        Canvas.ForceUpdateCanvases ();
+        float textHeight = speechTransform.GetChild (0).GetComponent<RectTransform> ().rect.height;
+        float currentWidth = speechTransform.GetComponent<RectTransform> ().rect.width;
+        speechTransform.GetComponent<RectTransform> ().sizeDelta = new Vector2 (currentWidth, textHeight);
     }
 
-    private void LeftAlignSpeechBubble(GameObject speech)
-    {
-        speech.GetComponent<Image>().sprite = leftSpeechBubble;
-        Vector3 childPos = speech.transform.GetChild(0).transform.localPosition;
-        childPos = new Vector3((childPos.x + 50), childPos.y, 0);
-        speech.transform.GetChild(0).transform.localPosition = childPos;
+    private void LeftAlignSpeechBubble (GameObject speech) {
+        speech.GetComponent<Image> ().sprite = leftSpeechBubble;
+        Vector3 childPos = speech.transform.GetChild (0).transform.localPosition;
+        childPos = new Vector3 ((childPos.x + 50), childPos.y, 0);
+        speech.transform.GetChild (0).transform.localPosition = childPos;
     }
 
-    public void Interrupt()
-    {
+    public void Interrupt () {
         //TODO put this in CopyFormatter
-        string formattedInterruption = SpeechCopy.interruption.Replace("(rightPronoun1)", PronounValues.GetRightPronoun1()).Replace("(rightPronoun2)", PronounValues.GetRightPronoun2());
-        GameObject interrupt = Instantiate(interruption);
-        interrupt.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = formattedInterruption;
-        interrupt.transform.SetParent(gameObject.transform, false);
-        interrupt.transform.SetSiblingIndex(interruptIndex);
+        string formattedInterruption = SpeechCopy.interruption.Replace ("(rightPronoun1)", PronounValues.GetRightPronoun1 ()).Replace ("(rightPronoun2)", PronounValues.GetRightPronoun2 ());
+        GameObject interrupt = Instantiate (interruption);
+        interrupt.GetComponentInChildren<TMPro.TextMeshProUGUI> ().text = formattedInterruption;
+        interrupt.transform.SetParent (gameObject.transform, false);
+        interrupt.transform.SetSiblingIndex (interruptIndex);
 
-        GameObject apology = Instantiate(speechBubble);
-        apology.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = SpeechCopy.apologies[0];
-        apology.transform.SetParent(gameObject.transform, false);
-        apology.transform.SetSiblingIndex(interruptIndex + 1);
+        GameObject apology = Instantiate (speechBubble);
+        apology.GetComponentInChildren<TMPro.TextMeshProUGUI> ().text = SpeechCopy.apologies[0];
+        apology.transform.SetParent (gameObject.transform, false);
+        apology.transform.SetSiblingIndex (interruptIndex + 1);
 
         interruptCount += 1;
 
-        if (interruptCount >= 3)
-        {
-            CorrectAllPronouns();
+        if (interruptCount >= 3) {
+            CorrectAllPronouns ();
         }
 
-        StartCoroutine(StopScroll());
+        StartCoroutine (StopScroll ());
     }
 
-    private void CorrectAllPronouns()
-    {
-        GameObject[] speechBubbles = GameObject.FindGameObjectsWithTag("Speech");
-        foreach (var speech in speechBubbles)
-        {
-            string speechText = speech.GetComponentInChildren<TMPro.TextMeshProUGUI>().text;
-            speechText = speechText.Replace(PronounValues.GetWrongPronouns1()[0], PronounValues.GetRightPronoun1());
-            speechText = speechText.Replace(PronounValues.GetWrongPronouns2()[0], PronounValues.GetRightPronoun2());
-            speech.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = speechText;
+    private void CorrectAllPronouns () {
+        GameObject[] speechBubbles = GameObject.FindGameObjectsWithTag ("Speech");
+        foreach (var speech in speechBubbles) {
+            string speechText = speech.GetComponentInChildren<TMPro.TextMeshProUGUI> ().text;
+            speechText = speechText.Replace (PronounValues.GetWrongPronouns1 () [0], PronounValues.GetRightPronoun1 ());
+            speechText = speechText.Replace (PronounValues.GetWrongPronouns2 () [0], PronounValues.GetRightPronoun2 ());
+            speech.GetComponentInChildren<TMPro.TextMeshProUGUI> ().text = speechText;
         }
     }
 
-    private IEnumerator StopScroll()
-    {
-        gameObject.GetComponent<Scroll>().speed = 0;
-        interruptButton.GetComponent<Button>().interactable = false;
+    private IEnumerator StopScroll () {
+        gameObject.GetComponent<Scroll> ().speed = 0;
+        interruptButton.GetComponent<Button> ().interactable = false;
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds (2);
 
-        gameObject.GetComponent<Scroll>().speed = 1;
+        gameObject.GetComponent<Scroll> ().speed = 1;
 
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds (5);
 
-        interruptButton.GetComponent<Button>().interactable = true;
+        interruptButton.GetComponent<Button> ().interactable = true;
     }
 }
