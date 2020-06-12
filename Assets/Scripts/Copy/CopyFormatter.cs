@@ -12,8 +12,8 @@ public static class CopyFormatter
         foreach (var text in copyList)
         {
             string newText = "";
-            newText = text.Replace("(wrongPronoun1)", PronounValues.GetWrongPronouns1()[0]);
-            newText = newText.Replace("(wrongPronoun2)", PronounValues.GetWrongPronouns2()[0]);
+            newText = text.Replace("(wrongPronoun1)", PronounValues.GetWrongPronouns1()[1]);
+            newText = newText.Replace("(wrongPronoun2)", PronounValues.GetWrongPronouns2()[1]);
             newCopyList.Add(newText);
         }
         return newCopyList;
