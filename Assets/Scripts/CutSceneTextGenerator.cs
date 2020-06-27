@@ -29,8 +29,8 @@ public class CutSceneTextGenerator : MonoBehaviour {
             text.text = sentence;
             yield return ShowText ();
         }
-        if (CutSceneFinishEvent != null){
-            CutSceneFinishEvent();
+        if (CutSceneFinishEvent != null && sceneNumber < 2) {
+            CutSceneFinishEvent ();
         }
     }
 
