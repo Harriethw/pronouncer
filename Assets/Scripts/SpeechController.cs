@@ -85,7 +85,7 @@ public class SpeechController : MonoBehaviour {
 
         gameObject.GetComponent<Scroll> ().speed = 1;
 
-        yield return new WaitForSeconds (5);
+        yield return new WaitForSeconds (4);
 
         interruptButton.GetComponent<Button> ().interactable = true;
     }
