@@ -33,7 +33,7 @@ public class SpeechController : MonoBehaviour {
 
     private void SetHeight (Transform speechTransform) {
         Canvas.ForceUpdateCanvases ();
-        float textHeight = speechTransform.GetChild (0).GetComponent<RectTransform> ().rect.height;
+        float textHeight = speechTransform.GetChild (0).GetComponent<RectTransform> ().rect.height + 15;
         float currentWidth = speechTransform.GetComponent<RectTransform> ().rect.width;
         speechTransform.GetComponent<RectTransform> ().sizeDelta = new Vector2 (currentWidth, textHeight);
     }
