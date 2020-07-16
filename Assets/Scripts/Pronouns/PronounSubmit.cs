@@ -16,6 +16,8 @@ public class PronounSubmit : MonoBehaviour {
         PronounValues.SetPronoun1 (pronoun1.text);
         PronounValues.SetPronoun2 (pronoun2.text);
         Debug.Log ("submitting " + PronounValues.GetRightPronoun1 () + PronounValues.GetRightPronoun2 ());
-        SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 1);
+        if (OnPronounSubmit != null) {
+            OnPronounSubmit ();
+        }
     }
 }

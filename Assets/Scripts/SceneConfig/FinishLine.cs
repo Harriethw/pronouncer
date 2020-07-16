@@ -8,7 +8,6 @@ public class FinishLine : MonoBehaviour {
     public static event TextFinishedHandler OnTextFinished;
 
     void OnTriggerExit2D (Collider2D other) {
-
         if (other.gameObject.tag == "FinishLine" && OnTextFinished != null) {
             OnTextFinished ();
         }
