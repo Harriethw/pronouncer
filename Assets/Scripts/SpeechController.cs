@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class SpeechController : MonoBehaviour {
 
-    public static int interruptIndex = 2;
+    public static int interruptIndex = 3;
     public GameObject interruption;
     public GameObject speechBubble;
     public GameObject interruptButton;
@@ -24,16 +24,16 @@ public class SpeechController : MonoBehaviour {
             GameObject speech = Instantiate (speechBubble);
             speech.transform.SetParent (gameObject.transform, false);
             speech.GetComponentInChildren<TMPro.TextMeshProUGUI> ().text = formattedChatter[i];
-            SetHeight (speech.transform);
+            SetHeightOfSpeechBubble (speech.transform);
             if (i % 2 == 0) {
                 LeftAlignSpeechBubble (speech);
             }
         }
     }
 
-    private void SetHeight (Transform speechTransform) {
+    private void SetHeightOfSpeechBubble (Transform speechTransform) {
         Canvas.ForceUpdateCanvases ();
-        float textHeight = speechTransform.GetChild (0).GetComponent<RectTransform> ().rect.height + 15;
+        float textHeight = speechTransform.GetChild (0).GetComponent<RectTransform> ().rect.height + 25;
         float currentWidth = speechTransform.GetComponent<RectTransform> ().rect.width;
         speechTransform.GetComponent<RectTransform> ().sizeDelta = new Vector2 (currentWidth, textHeight);
     }
@@ -41,7 +41,7 @@ public class SpeechController : MonoBehaviour {
     private void LeftAlignSpeechBubble (GameObject speech) {
         speech.GetComponent<Image> ().sprite = leftSpeechBubble;
         Vector3 childPos = speech.transform.GetChild (0).transform.localPosition;
-        childPos = new Vector3 ((childPos.x + 50), childPos.y, 0);
+        childPos = new Vector3 ((childPos.x + 30), childPos.y, 0);
         speech.transform.GetChild (0).transform.localPosition = childPos;
     }
 
@@ -57,8 +57,9 @@ public class SpeechController : MonoBehaviour {
         apology.GetComponentInChildren<TMPro.TextMeshProUGUI> ().text = SpeechCopy.apologies[0];
         apology.transform.SetParent (gameObject.transform, false);
         apology.transform.SetSiblingIndex (interruptIndex + 1);
+        SetHeightOfSpeechBubble (apology.transform);
 
-        interruptCount += 1;
+        ++interruptCount;
 
         if (interruptCount >= 3) {
             CorrectAllPronouns ();
@@ -71,8 +72,8 @@ public class SpeechController : MonoBehaviour {
         GameObject[] speechBubbles = GameObject.FindGameObjectsWithTag ("Speech");
         foreach (var speech in speechBubbles) {
             string speechText = speech.GetComponentInChildren<TMPro.TextMeshProUGUI> ().text;
-            speechText = speechText.Replace (PronounValues.GetWrongPronouns1 () [0], PronounValues.GetRightPronoun1 ());
-            speechText = speechText.Replace (PronounValues.GetWrongPronouns2 () [0], PronounValues.GetRightPronoun2 ());
+            speechText = speechText.Replace (PronounValues.GetWrongPronouns1 () [1], PronounValues.GetRightPronoun1 ());
+            speechText = speechText.Replace (PronounValues.GetWrongPronouns2 () [1], PronounValues.GetRightPronoun2 ());
             speech.GetComponentInChildren<TMPro.TextMeshProUGUI> ().text = speechText;
         }
     }
