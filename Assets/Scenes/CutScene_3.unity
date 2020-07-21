@@ -270,12 +270,12 @@ PrefabInstance:
     - target: {fileID: 3708226344221732760, guid: a31b2d442ffdf46868fd7ed8e5e12fd7,
         type: 3}
       propertyPath: m_BackGroundColor.g
-      value: 0.8978206
+      value: 0.8142857
       objectReference: {fileID: 0}
     - target: {fileID: 3708226344221732760, guid: a31b2d442ffdf46868fd7ed8e5e12fd7,
         type: 3}
       propertyPath: m_BackGroundColor.b
-      value: 0.8632076
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 3708226344221732762, guid: a31b2d442ffdf46868fd7ed8e5e12fd7,
         type: 3}
@@ -881,7 +881,7 @@ GameObject:
   - component: {fileID: 1649191869}
   - component: {fileID: 1649191868}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Image 01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -757,12 +757,12 @@ PrefabInstance:
     - target: {fileID: 3708226344221732760, guid: a31b2d442ffdf46868fd7ed8e5e12fd7,
         type: 3}
       propertyPath: m_BackGroundColor.g
-      value: 0.8560515
+      value: 0.7936335
       objectReference: {fileID: 0}
     - target: {fileID: 3708226344221732760, guid: a31b2d442ffdf46868fd7ed8e5e12fd7,
         type: 3}
       propertyPath: m_BackGroundColor.b
-      value: 0.5518868
+      value: 0.5529412
       objectReference: {fileID: 0}
     - target: {fileID: 3708226344221732762, guid: a31b2d442ffdf46868fd7ed8e5e12fd7,
         type: 3}
@@ -1165,7 +1165,7 @@ GameObject:
   - component: {fileID: 756945452}
   - component: {fileID: 756945451}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Image (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1187,7 +1187,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -207, y: -8}
+  m_AnchoredPosition: {x: -270, y: -8}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &756945451
@@ -2331,9 +2331,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 364634365873697209}
-  - {fileID: 364634365898360706}
-  - {fileID: 364634365926793964}
   - {fileID: 364634365831894129}
+  - {fileID: 364634365926793964}
+  - {fileID: 364634365898360706}
   - {fileID: 756945450}
   m_Father: {fileID: 364634366191041428}
   m_RootOrder: 0
@@ -2407,7 +2407,7 @@ GameObject:
   - component: {fileID: 364634365831894095}
   - component: {fileID: 364634365831894094}
   m_Layer: 5
-  m_Name: Image (3)
+  m_Name: Image 01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2425,11 +2425,11 @@ RectTransform:
   m_LocalScale: {x: 0.8858157, y: 0.8858157, z: 0.8858157}
   m_Children: []
   m_Father: {fileID: 364634365520763478}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 213, y: -22}
+  m_AnchoredPosition: {x: 240.0014, y: -108}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &364634365873697206
@@ -2525,7 +2525,7 @@ RectTransform:
   m_LocalScale: {x: 0.41632, y: 0.41632, z: 0.41632}
   m_Children: []
   m_Father: {fileID: 364634365520763478}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -64.675}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2645,7 +2645,7 @@ GameObject:
   - component: {fileID: 364634365926793962}
   - component: {fileID: 364634365926793965}
   m_Layer: 5
-  m_Name: Image (2)
+  m_Name: Image 02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
