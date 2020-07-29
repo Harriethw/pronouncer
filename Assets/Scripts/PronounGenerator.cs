@@ -4,25 +4,22 @@ using UnityEngine;
 
 public class PronounGenerator : MonoBehaviour {
     public GameObject pronoun;
-
     private Transform[] spawnPoints;
-
     public float maxTime = 50;
-
     public float minTime = 10;
-
     //current time
     private float time;
-
     //The time to spawn the object
     private float spawnTime;
+
+    private float speed = 1;
+    private float direction = 2;
 
     void Awake () {
 
         List<Transform> spawningPointsAsList = new List<Transform> ();
 
         foreach (Transform child in transform) {
-            Debug.Log (child);
             spawningPointsAsList.Add (child);
         }
 
@@ -43,7 +40,6 @@ public class PronounGenerator : MonoBehaviour {
         time += Time.deltaTime;
         //Check if its the right time to spawn the object
         if (time >= spawnTime) {
-            Debug.Log ("Time to spawn: ");
             Spawn ();
             SetRandomTime ();
             time = 0;
@@ -56,5 +52,12 @@ public class PronounGenerator : MonoBehaviour {
         GameObject newPronoun = Instantiate (pronoun, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
         newPronoun.transform.SetParent (spawnPoints[spawnPointIndex].transform, false);
         //TODO set to random wrong pronoun
+        AddScroll (newPronoun);
+    }
+
+    void AddScroll (GameObject newPronoun) {
+        newPronoun.AddComponent<Scroll> ();
+        newPronoun.GetComponent<Scroll> ().speed = speed;
+        newPronoun.GetComponent<Scroll> ().direction = new Vector3 (0, direction, 0);
     }
 }
