@@ -9,17 +9,20 @@ EditorBuildSettings:
     path: Assets/Scenes/ChoosePronoun.unity
     guid: 85e77903b7c9f422e99b2451dc99e2d1
   - enabled: 1
+    path: Assets/Scenes/Email.unity
+    guid: 5ec49ce238dc24444a24aa85995588f5
+  - enabled: 1
     path: Assets/Scenes/CutScene_1.unity
     guid: 9bfa7bdebe5bd483bafa50f8cae3d4ad
   - enabled: 1
-    path: Assets/Scenes/Email.unity
-    guid: 5ec49ce238dc24444a24aa85995588f5
+    path: Assets/Scenes/Kitchen.unity
+    guid: c9e51acb4244f40aca252d30f0ad75f2
   - enabled: 1
     path: Assets/Scenes/CutScene_2.unity
     guid: 252e87b9063424a579e9db2441d06350
   - enabled: 1
-    path: Assets/Scenes/Kitchen.unity
-    guid: c9e51acb4244f40aca252d30f0ad75f2
+    path: Assets/Scenes/Video.unity
+    guid: 65b2923ef93974fa8b53afe0421f4ff6
   - enabled: 1
     path: Assets/Scenes/CutScene_3.unity
     guid: f5da68598e1d14cd48d396959d45057e
