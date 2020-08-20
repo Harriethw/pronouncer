@@ -32,7 +32,6 @@ public class PronounGenerator : MonoBehaviour {
 
     void SetRandomTime () {
         spawnTime = Random.Range (minTime, maxTime);
-        Debug.Log ("Next object spawn in " + spawnTime + " seconds.");
     }
 
     void FixedUpdate () {
