@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="265px" height="166px" viewBox="0 0 265 166" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group</title>
+    <g id="chat" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-752.000000, -279.000000)">
+            <g id="Group" transform="translate(752.865963, 279.033209)">
+                <ellipse id="Oval" fill="#DC8522" transform="translate(125.500000, 73.000000) rotate(-18.000000) translate(-125.500000, -73.000000) " cx="125.5" cy="73" rx="119.5" ry="37"></ellipse>
+                <ellipse id="Oval" fill="#DEB221" transform="translate(138.500000, 92.000000) rotate(-18.000000) translate(-138.500000, -92.000000) " cx="138.5" cy="92" rx="119.5" ry="37"></ellipse>
+            </g>
+        </g>
+    </g>
+</svg>

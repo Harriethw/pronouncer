@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="71px" height="65px" viewBox="0 0 71 65" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Oval</title>
+    <g id="chat" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-759.000000, -62.000000)" fill="#D2AA00">
+            <g id="starburst" transform="translate(880.624460, 130.128041) rotate(-44.000000) translate(-880.624460, -130.128041) translate(736.624460, -2.871959)">
+                <path d="M130.370307,69.557156 C144.854819,56.7288761 146.220459,36.4749697 133.420549,24.31879 C120.620638,12.1626102 98.5022441,12.707455 84.017732,25.5357349 C69.53322,38.3640149 68.1675803,58.6179212 80.9674905,70.774101 C93.7674007,82.9302808 115.885795,82.3854359 130.370307,69.557156 Z" id="Oval" transform="translate(107.194020, 47.546445) rotate(44.000000) translate(-107.194020, -47.546445) "></path>
+            </g>
+        </g>
+    </g>
+</svg>
