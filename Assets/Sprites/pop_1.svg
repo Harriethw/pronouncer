@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="235px" height="264px" viewBox="0 0 235 264" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group</title>
+    <g id="email" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-33.000000, -8.000000)">
+            <g id="Group" transform="translate(33.000000, 8.000000)">
+                <ellipse id="Oval" fill="#AB4E00" cx="177" cy="60" rx="47" ry="45"></ellipse>
+                <ellipse id="Oval" fill="#DFB000" cx="188" cy="45" rx="47" ry="45"></ellipse>
+                <rect id="Rectangle" fill="#E2B200" transform="translate(86.855104, 164.996174) scale(1, -1) rotate(49.000000) translate(-86.855104, -164.996174) " x="-38.1448959" y="158.996174" width="250" height="12" rx="6"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -16,6 +16,7 @@ public class NextScene : MonoBehaviour {
 
     public void GoToNextScene () {
         //trigger canvas fade, then load next scene
+        Debug.Log("clicked");
         if (canvasAnim != null) {
             canvasAnim.Play ("Canvas_fade_out");
         } else {
