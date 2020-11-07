@@ -5,14 +5,14 @@ using UnityEngine;
 public static class CutSceneCopy {
     public static string[] scene1 = new string[] {
         "Sometimes you need to correct other people's pronouns...",
-        "...it can be tough sometimes, but that's ok",
-        "you can make the world better in small ways",
+        "sometimes it feels so uncomfortable you want to cringe",
+        "...that's ok. Keep going, it get's easier",
     };
 
     public static string[] scene2 = new string[] {
         "Sometimes you might use the wrong pronouns for someone else",
-        "apologise, take care next time, listen, learn...",
-        "use your voice",
+        "apologise, take care next time...",
+        "keep using your voice",
     };
 
     public static string[] scene3 = new string[] {

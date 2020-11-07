@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512px" height="175px" viewBox="0 0 512 175" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Rectangle</title>
+    <g id="cutscene1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-350.000000, -158.000000)" fill="#F5B4A4">
+            <rect id="Rectangle" x="350" y="158" width="512" height="175" rx="8"></rect>
+        </g>
+    </g>
+</svg>
