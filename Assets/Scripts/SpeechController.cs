@@ -5,13 +5,15 @@ using UnityEngine.UI;
 
 public class SpeechController : MonoBehaviour {
 
-    public static int interruptIndex = 3;
+    public static int interruptIndex = 2;
     public GameObject interruption;
     public GameObject speechBubble;
     public GameObject interruptButton;
     public Sprite leftSpeechBubble;
 
     private int interruptCount = 0;
+    private int leftWidthDifference = 45;
+    private int heightDifference = 40;
 
     // Start is called before the first frame update
     void Start () {
@@ -33,7 +35,7 @@ public class SpeechController : MonoBehaviour {
 
     private void SetHeightOfSpeechBubble (Transform speechTransform) {
         Canvas.ForceUpdateCanvases ();
-        float textHeight = speechTransform.GetChild (0).GetComponent<RectTransform> ().rect.height + 25;
+        float textHeight = speechTransform.GetChild (0).GetComponent<RectTransform> ().rect.height + heightDifference;
         float currentWidth = speechTransform.GetComponent<RectTransform> ().rect.width;
         speechTransform.GetComponent<RectTransform> ().sizeDelta = new Vector2 (currentWidth, textHeight);
     }
@@ -41,7 +43,7 @@ public class SpeechController : MonoBehaviour {
     private void LeftAlignSpeechBubble (GameObject speech) {
         speech.GetComponent<Image> ().sprite = leftSpeechBubble;
         Vector3 childPos = speech.transform.GetChild (0).transform.localPosition;
-        childPos = new Vector3 ((childPos.x + 30), childPos.y, 0);
+        childPos = new Vector3 ((childPos.x + leftWidthDifference), childPos.y, 0);
         speech.transform.GetChild (0).transform.localPosition = childPos;
     }
 

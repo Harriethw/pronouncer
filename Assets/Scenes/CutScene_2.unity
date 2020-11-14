@@ -861,7 +861,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73ead22cc99a649258891c61b1543234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvasAnim: {fileID: 0}
+  canvasAnim: {fileID: 489397055}
 --- !u!4 &531905081
 Transform:
   m_ObjectHideFlags: 0

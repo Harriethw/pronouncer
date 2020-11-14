@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="275px" height="178px" viewBox="0 0 275 178" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 3</title>
+    <g id="kitchen" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-762.000000, 11.000000)">
+            <g id="Group-3" transform="translate(762.865963, -10.966791)">
+                <ellipse id="Oval" fill="#DFDAAC" transform="translate(125.500000, 73.000000) rotate(-18.000000) translate(-125.500000, -73.000000) " cx="125.5" cy="73" rx="119.5" ry="37"></ellipse>
+                <ellipse id="Oval" fill="#B84D00" transform="translate(148.500000, 104.000000) rotate(-18.000000) translate(-148.500000, -104.000000) " cx="148.5" cy="104" rx="119.5" ry="37"></ellipse>
+            </g>
+        </g>
+    </g>
+</svg>

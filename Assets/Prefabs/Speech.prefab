@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 628373062186507536}
   - component: {fileID: 6634564798241299061}
   - component: {fileID: 3095625745895121952}
-  - component: {fileID: 4618107053652416420}
+  - component: {fileID: 2575168351156447616}
   m_Layer: 5
   m_Name: Speech
   m_TagString: Speech
@@ -37,8 +37,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 17.899994, y: 25.850006}
-  m_SizeDelta: {x: 235, y: 78.9}
+  m_AnchoredPosition: {x: 17.75, y: 96.59}
+  m_SizeDelta: {x: 323.20718, y: 202.05713}
   m_Pivot: {x: 0.5, y: 0.99999994}
 --- !u!222 &628373062186507536
 CanvasRenderer:
@@ -95,7 +95,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4618107053652416420
+--- !u!114 &2575168351156447616
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -110,10 +110,11 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b68b536bd71f34d44855fc7fb762a8c3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c361a1e8595994cd189306011c8eb1f5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -158,8 +159,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 94.49, y: -2.79}
-  m_SizeDelta: {x: 179.67, y: 0}
+  m_AnchoredPosition: {x: 140, y: -15}
+  m_SizeDelta: {x: 219.61284, y: 0}
   m_Pivot: {x: 0.5, y: 0.99999976}
 --- !u!222 &7230865029190006834
 CanvasRenderer:
@@ -184,6 +185,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -254,7 +256,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 8.901012, y: 8.881699, z: 4.1775208, w: 4.1845474}
+  m_margin: {x: 3.353344, y: 4.4436493, z: 30.251373, w: -3.5821152}
   m_textInfo:
     textComponent: {fileID: 7607849345652512865}
     characterCount: 10
