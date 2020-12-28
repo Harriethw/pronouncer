@@ -13,8 +13,6 @@ public class OnPronounLeave : MonoBehaviour
     {
         Destroy(other.gameObject);
         leaveCount += 1;
-        Debug.Log(leaveCount);
         leaveCountText.text = leaveCount.ToString();
-
     }
 }

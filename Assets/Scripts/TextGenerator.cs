@@ -28,7 +28,7 @@ public class TextGenerator : MonoBehaviour
         GetWidthMeasurements();
         GetWords();
         GenerateWords();
-        Pronoun.onPronounCaught += this.GenerateGrid;
+        Pronoun.OnPronounCaught += this.GenerateGrid;
     }
 
     private void GetWidthMeasurements()
@@ -99,6 +99,10 @@ public class TextGenerator : MonoBehaviour
             }
             wordGrid[i].transform.localPosition = new Vector3(x, y, 0);
         }
+    }
+
+    void OnDestroy() {
+        Pronoun.OnPronounCaught -= this.GenerateGrid;
     }
 
 }

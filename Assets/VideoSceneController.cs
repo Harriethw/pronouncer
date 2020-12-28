@@ -9,7 +9,7 @@ public class VideoSceneController : MonoBehaviour {
     private int score = 0;
     public int scoreLimit = 8;
     void Start () {
-        Pronoun.onPronounCaught += this.IncrementScore;
+        Pronoun.OnPronounCaught += this.IncrementScore;
     }
 
     private void IncrementScore () {

@@ -11,6 +11,9 @@ public class SpeechController : MonoBehaviour {
     public GameObject interruptButton;
     public Sprite leftSpeechBubble;
 
+    public delegate void InterruptAction();
+    public static event InterruptAction OnInterruption;
+
     private int interruptCount = 0;
     private int leftWidthDifference = 45;
     private int heightDifference = 40;
@@ -48,6 +51,9 @@ public class SpeechController : MonoBehaviour {
     }
 
     public void Interrupt () {
+        if (OnInterruption != null){
+            OnInterruption();
+        }
         //TODO put this in CopyFormatter
         string formattedInterruption = SpeechCopy.interruption.Replace ("(rightPronoun1)", PronounValues.GetRightPronoun1 ()).Replace ("(rightPronoun2)", PronounValues.GetRightPronoun2 ());
         GameObject interrupt = Instantiate (interruption);

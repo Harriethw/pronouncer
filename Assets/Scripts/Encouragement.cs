@@ -10,12 +10,19 @@ public class Encouragement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Pronoun.onPronounCaught += this.ShowEncouragement;
+        Pronoun.OnPronounCaught += this.ShowEncouragement;
+        SpeechController.OnInterruption += this.ShowEncouragement;
     }
 
     private void ShowEncouragement()
     {
         gameObject.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = encouragementPhrases[Random.Range(0, encouragementPhrases.Count)];
         gameObject.GetComponent<Animator>().Play("fade");
+    }
+
+    void OnDestroy()
+    {
+        Pronoun.OnPronounCaught -= this.ShowEncouragement;
+        SpeechController.OnInterruption -= this.ShowEncouragement;
     }
 }

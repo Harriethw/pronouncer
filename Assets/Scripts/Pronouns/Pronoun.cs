@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class Pronoun : MonoBehaviour
 {
-    public delegate void OnPronounCaught();
-    public static OnPronounCaught onPronounCaught;
+    public delegate void PronounCaughtAction();
+    public static event PronounCaughtAction OnPronounCaught;
 
     protected string correctPronoun;
 
@@ -25,9 +25,9 @@ public class Pronoun : MonoBehaviour
     {
         gameObject.GetComponent<TMPro.TextMeshProUGUI>().text = correctPronoun;
         gameObject.GetComponentInChildren<ParticleSystem>().Play();
-        if (onPronounCaught != null)
+        if (OnPronounCaught != null)
         {
-            onPronounCaught();
+            OnPronounCaught();
         }
     }
 }

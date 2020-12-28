@@ -14,7 +14,7 @@ public class ScoreController : MonoBehaviour {
     // Start is called before the first frame update
     void Start () {
         PronounCatcher.PronounLeaveEvent += this.UpdateLeaveCount;
-        Pronoun.onPronounCaught += this.UpdateScoreCount;
+        Pronoun.OnPronounCaught += this.UpdateScoreCount;
         scoreBar.fillAmount = 0f;
     }
 
@@ -29,6 +29,6 @@ public class ScoreController : MonoBehaviour {
 
     void OnDestroy () {
         PronounCatcher.PronounLeaveEvent -= this.UpdateLeaveCount;
-        Pronoun.onPronounCaught -= this.UpdateScoreCount;
+        Pronoun.OnPronounCaught -= this.UpdateScoreCount;
     }
 }
