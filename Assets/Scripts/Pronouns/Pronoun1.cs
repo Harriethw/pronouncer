@@ -6,8 +6,9 @@ using UnityEngine.UI;
 public class Pronoun1 : Pronoun
 {
     //e.g. she, he, they
-    void Start()
+    public override void Start()
     {
+        base.Start();
         SetCorrectPronoun();
     }
 

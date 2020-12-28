@@ -6,8 +6,9 @@ using UnityEngine.UI;
 public class Pronoun2 : Pronoun
 {
     //e.g. her, him, them
-    void Start()
+    public override void Start()
     {
+        base.Start();
         SetCorrectPronoun();
     }
 
