@@ -11,6 +11,7 @@ public class NextScene : MonoBehaviour {
         CutSceneTextGenerator.CutSceneFinishEvent += this.GoToNextScene;
         PronounSubmit.OnPronounSubmit += this.GoToNextScene;
         VideoSceneController.VideoSceneEndEvent += this.GoToNextScene;
+        NextSceneTimer.OnTimeOut += this.GoToNextScene;
         CanvasFade.OnCanvasFadeOut += this.LoadScene;
     }
 
