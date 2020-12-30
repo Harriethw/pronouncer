@@ -31,4 +31,13 @@ public class NextScene : MonoBehaviour {
             SceneManager.LoadScene (nextSceneIndex);
         }
     }
+
+    void OnDestroy (){
+        FinishLine.OnTextFinished -= this.GoToNextScene;
+        CutSceneTextGenerator.CutSceneFinishEvent -= this.GoToNextScene;
+        PronounSubmit.OnPronounSubmit -= this.GoToNextScene;
+        VideoSceneController.VideoSceneEndEvent -= this.GoToNextScene;
+        NextSceneTimer.OnTimeOut -= this.GoToNextScene;
+        CanvasFade.OnCanvasFadeOut -= this.LoadScene;
+    }
 }

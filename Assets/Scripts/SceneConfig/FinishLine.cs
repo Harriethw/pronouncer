@@ -11,6 +11,5 @@ public class FinishLine : MonoBehaviour {
         if (other.gameObject.tag == "FinishLine" && OnTextFinished != null) {
             OnTextFinished ();
         }
-
     }
 }

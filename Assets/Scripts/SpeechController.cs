@@ -69,11 +69,13 @@ public class SpeechController : MonoBehaviour {
 
         ++interruptCount;
 
-        if (interruptCount >= 3) {
+        bool interruptionComplete = interruptCount >= 3;
+
+        if (interruptionComplete) {
             CorrectAllPronouns ();
         }
 
-        StartCoroutine (StopScroll ());
+        StartCoroutine (StopScroll (interruptionComplete));
     }
 
     private void CorrectAllPronouns () {
@@ -86,9 +88,10 @@ public class SpeechController : MonoBehaviour {
         }
     }
 
-    private IEnumerator StopScroll () {
+    private IEnumerator StopScroll (bool interruptionComplete) {
         gameObject.GetComponent<Scroll> ().speed = 0;
         interruptButton.GetComponent<Button> ().interactable = false;
+        interruptButton.GetComponentInParent<Animator> ().SetBool("interactable", false);
 
         yield return new WaitForSeconds (2);
 
@@ -96,6 +99,9 @@ public class SpeechController : MonoBehaviour {
 
         yield return new WaitForSeconds (4);
 
-        interruptButton.GetComponent<Button> ().interactable = true;
+        if (!interruptionComplete) {
+            interruptButton.GetComponentInParent<Animator> ().SetBool("interactable", true);
+            interruptButton.GetComponent<Button> ().interactable = true;
+        }
     }
 }
