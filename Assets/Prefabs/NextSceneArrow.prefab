@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9037724010475329755}
   - component: {fileID: 9037724010475329756}
   - component: {fileID: 9037724010475329753}
+  - component: {fileID: 66767217201231817}
   m_Layer: 5
   m_Name: NextSceneArrow
   m_TagString: Untagged
@@ -145,6 +146,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasAnim: {fileID: 0}
+--- !u!95 &66767217201231817
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9037724010475329758}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f188f95144f644074bd915ae4a3f77bf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &9037724012107109905
 GameObject:
   m_ObjectHideFlags: 0
