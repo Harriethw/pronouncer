@@ -10,6 +10,7 @@ public class SpeechController : MonoBehaviour {
     public GameObject speechBubble;
     public GameObject interruptButton;
     public Sprite leftSpeechBubble;
+    public Sprite apologySprite;
 
     public delegate void InterruptAction();
     public static event InterruptAction OnInterruption;
@@ -62,6 +63,7 @@ public class SpeechController : MonoBehaviour {
         interrupt.transform.SetSiblingIndex (interruptIndex);
 
         GameObject apology = Instantiate (speechBubble);
+        apology.GetComponent<Image> ().sprite = apologySprite;
         apology.GetComponentInChildren<TMPro.TextMeshProUGUI> ().text = SpeechCopy.apologies[0];
         apology.transform.SetParent (gameObject.transform, false);
         apology.transform.SetSiblingIndex (interruptIndex + 1);
