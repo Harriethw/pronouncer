@@ -19,8 +19,11 @@ public class SpeechController : MonoBehaviour {
     private int leftWidthDifference = 45;
     private int heightDifference = 40;
 
+    private FormNavigator formNavigator;
+
     // Start is called before the first frame update
     void Start () {
+        formNavigator = GameObject.Find("FormNavigator").GetComponent<FormNavigator> ();
         GenerateSpeech ();
     }
 
@@ -88,6 +91,7 @@ public class SpeechController : MonoBehaviour {
             speechText = speechText.Replace (PronounValues.GetWrongPronouns2 () [1], PronounValues.GetRightPronoun2 ());
             speech.GetComponentInChildren<TMPro.TextMeshProUGUI> ().text = speechText;
         }
+        formNavigator.inputs.Add(GameObject.Find("NextSceneArrowButton"));
     }
 
     private IEnumerator StopScroll (bool interruptionComplete) {
