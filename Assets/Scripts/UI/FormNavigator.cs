@@ -12,7 +12,7 @@ public class FormNavigator : MonoBehaviour {
 
     void Start () {
         myEventSystem = EventSystem.current;
-        if (inputs.Count > 0) {
+        if (inputs.Count > 0 && !myEventSystem.currentSelectedGameObject) {
             SetCurrentTabObject();
         }
     }
