@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.EventSystems;
 using UnityEngine;
 
 public class PronounGenerator : MonoBehaviour {
@@ -16,7 +17,6 @@ public class PronounGenerator : MonoBehaviour {
     private float direction = 2;
 
     void Awake () {
-
         List<Transform> spawningPointsAsList = new List<Transform> ();
 
         foreach (Transform child in transform) {
@@ -28,6 +28,12 @@ public class PronounGenerator : MonoBehaviour {
     void Start () {
         SetRandomTime ();
         time = 0;
+    }
+
+    //Update if tab clicked, find most recent pronoun andclick it?
+    void Update () {
+        if (Input.GetKeyDown (KeyCode.Tab))
+            SelectAPronoun();
     }
 
     void SetRandomTime () {
@@ -58,5 +64,14 @@ public class PronounGenerator : MonoBehaviour {
         newPronoun.AddComponent<Scroll> ();
         newPronoun.GetComponent<Scroll> ().speed = speed;
         newPronoun.GetComponent<Scroll> ().direction = new Vector3 (0, direction, 0);
+    }
+
+    void SelectAPronoun () {
+        Pronoun1[] pronouns = GameObject.FindObjectsOfType<Pronoun1>();
+        if(pronouns.Length > 0) {
+            EventSystem.current.SetSelectedGameObject(pronouns[0].gameObject);
+        } else if (pronouns.Length > 1) {
+            EventSystem.current.SetSelectedGameObject(pronouns[1].gameObject);
+        }
     }
 }
