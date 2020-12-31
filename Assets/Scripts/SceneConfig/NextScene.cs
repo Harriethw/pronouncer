@@ -15,6 +15,11 @@ public class NextScene : MonoBehaviour {
         CanvasFade.OnCanvasFadeOut += this.LoadScene;
     }
 
+    void Update () {
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+            GoToNextScene();
+    }
+
     public void GoToNextScene () {
         //trigger canvas fade, then load next scene
         if (canvasAnim != null) {
