@@ -6,8 +6,6 @@ public static class SpeechCopy {
 
     public static string[] chatter = new string[] {
         "hey how did that big meeting go?",
-        "Pretty good, we talked over the KPI's for this sprint.",
-        "Awesome.",
         "Nico gave a presentation about donuts, (wrongPronoun1) killed it!",
         "oh cool! I've seen (wrongPronoun2) give that talk before!",
         "yeah actually (wrongPronoun1) had a good idea about deep fat frying that I think could help our cycle time",
