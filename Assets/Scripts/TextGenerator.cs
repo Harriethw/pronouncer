@@ -13,6 +13,7 @@ public class TextGenerator : MonoBehaviour
     private string copy;
     private List<string> words = new List<string>();
     private List<GameObject> wordGrid = new List<GameObject>();
+    private FormNavigator formNavigator;
 
     private float windowWidth;
     private float minX;
@@ -24,7 +25,9 @@ public class TextGenerator : MonoBehaviour
 
     void Start()
     {
+        formNavigator = GameObject.Find("FormNavigator").GetComponent<FormNavigator> ();
         copy = CopyFormatter.AddWrongPronounsToString(EmailCopy.emailCopy);
+
         GetWidthMeasurements();
         GetWords();
         GenerateWords();
@@ -54,10 +57,12 @@ public class TextGenerator : MonoBehaviour
             if (PronounValues.GetWrongPronouns1().Contains(formattedWord))
             {
                 wordObject = Instantiate(pronounPrefab1);
+                formNavigator.inputs.Add(wordObject);
             }
             else if (PronounValues.GetWrongPronouns2().Contains(formattedWord))
             {
                 wordObject = Instantiate(pronounPrefab2);
+                formNavigator.inputs.Add(wordObject);
             }
             else
             {
@@ -66,6 +71,7 @@ public class TextGenerator : MonoBehaviour
             wordObject.GetComponent<TMPro.TextMeshProUGUI>().text = word;
             wordGrid.Add(wordObject);
         }
+        formNavigator.inputs.Add(GameObject.Find("NextSceneArrowButton"));
         GenerateGrid();
     }
 

@@ -12,6 +12,9 @@ public class FormNavigator : MonoBehaviour {
 
     void Start () {
         myEventSystem = EventSystem.current;
+        if (inputs.Count > 0) {
+            SetCurrentTabObject();
+        }
     }
 
     void Update () {
@@ -20,10 +23,10 @@ public class FormNavigator : MonoBehaviour {
     }
 
     void SetCurrentTabObject () {
-        targetIndex++;
         if (targetIndex >= inputs.Count) {
             targetIndex = 0;
         }
         myEventSystem.SetSelectedGameObject (inputs[targetIndex]);
+        targetIndex++;
     }
 }
