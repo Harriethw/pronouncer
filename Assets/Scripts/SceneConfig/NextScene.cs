@@ -30,10 +30,13 @@ public class NextScene : MonoBehaviour {
         }
     }
 
+
     public void LoadScene () {
         int nextSceneIndex = SceneManager.GetActiveScene ().buildIndex + 1;
-        if (!(nextSceneIndex > SceneManager.sceneCountInBuildSettings)) {
+        if (!(nextSceneIndex >= SceneManager.sceneCountInBuildSettings)) {
             SceneManager.LoadScene (nextSceneIndex);
+        } else {
+            SceneManager.LoadScene (0);
         }
     }
 
