@@ -5,7 +5,7 @@ using UnityEngine;
 public static class CopyFormatter
 {
 
-    //TODO choose a random set of wrong pronouns? 
+    //TODO choose a random set of wrong pronouns?
     public static List<string> AddWrongPronounsToArray(string[] copyList)
     {
         List<string> newCopyList = new List<string>();

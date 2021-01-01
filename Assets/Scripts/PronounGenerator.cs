@@ -9,7 +9,7 @@ public class PronounGenerator : MonoBehaviour {
     public float maxTime = 50;
     public float minTime = 10;
     //current time
-    private float time;
+    private float time = 0;
     //The time to spawn the object
     private float spawnTime;
 
@@ -27,7 +27,7 @@ public class PronounGenerator : MonoBehaviour {
     }
     void Start () {
         SetRandomTime ();
-        time = 0;
+        SetWrongPronoun ();
     }
 
     //Update if tab clicked, find most recent pronoun andclick it?
@@ -73,5 +73,10 @@ public class PronounGenerator : MonoBehaviour {
         } else if (pronouns.Length > 1) {
             EventSystem.current.SetSelectedGameObject(pronouns[1].gameObject);
         }
+    }
+
+    void SetWrongPronoun () {
+        string wrongPronoun = PronounValues.GetWrongPronouns1() [0];
+        pronoun.GetComponentInChildren<TMPro.TextMeshProUGUI> ().text = wrongPronoun;
     }
 }

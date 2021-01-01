@@ -4254,7 +4254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pronoun: {fileID: 7085645105696361809, guid: f7dee4dd7584042759c0a9831f5fa166, type: 3}
   maxTime: 3
-  minTime: 0.2
+  minTime: 0.1
 --- !u!1 &1710479646
 GameObject:
   m_ObjectHideFlags: 0
